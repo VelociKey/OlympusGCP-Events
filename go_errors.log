@@ -1,0 +1,251 @@
+
+--- Module: C:\aAntigravitySpace\Olympus2\00000-Identity-Foundations\010-Vision\900-AegisGuardian ---
+--- Module: C:\aAntigravitySpace\Olympus2\00000-Identity-Foundations\020-Blueprints\00100-ADCIdentity ---
+--- Module: C:\aAntigravitySpace\Olympus2\20000-Context-Bridges\900-CapabilityProvider ---
+go : 
+P0000-pkg\000-transpiler\000-generator\generator.go:3:8: no 
+required module provides package github.com/VelociKey/Olympus
+2/MCPServers/CapabilityProvider/pkg/transpiler/ir; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (P0000-pkg\000-t 
+   .../ir; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/Olympus2/MCPServers/CapabilityPr
+ovider/pkg/transpiler/ir
+--- Module: C:\aAntigravitySpace\Olympus2\30000-Federated-Services\310-Core-Registry\900-OlympusRegistry ---
+--- Module: C:\aAntigravitySpace\Olympus2\30000-Federated-Services\320-Bridges\900-FederatedBridge ---
+go : main.go:17:2: no required module provides package 
+github.com/VelociKey/Olympus2/gen/olympus/v1; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (main.go:17:2: n 
+   .../v1; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/Olympus2/gen/olympus/v1
+main.go:18:2: no required module provides package github.com/
+VelociKey/Olympus2/gen/olympus/v1/olympusv1connect; to add 
+it:
+	go get 
+github.com/VelociKey/Olympus2/gen/olympus/v1/olympusv1connect
+P0000-pkg\000-a2a\client.go:6:2: no required module provides 
+package github.com/VelociKey/Olympus2/Services/FederatedOntol
+ogist/pkg/identity; to add it:
+	go get github.com/VelociKey/Olympus2/Services/FederatedOntol
+ogist/pkg/identity
+--- Module: C:\aAntigravitySpace\Olympus2\30000-Federated-Services\330-Ontology\900-FederatedOntologist ---
+go : P0000-pkg\000-pulse_service\pulse.go:6:2: no required 
+module provides package github.com/VelociKey/Olympus2/Service
+s/FederatedOntologist/pkg/identity; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (P0000-pkg\000-p 
+   ...ity; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/Olympus2/Services/FederatedOntol
+ogist/pkg/identity
+--- Module: C:\aAntigravitySpace\Olympus2\40000-Communication-Contracts\430-Protocol-Definitions\000-gen ---
+go : 000-olympus\000-v1\000-olympusv1connect\agent.connect.go
+:11:2: no required module provides package 
+github.com/VelociKey/Olympus2/gen/olympus/v1; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (000-olympus\000 
+   .../v1; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/Olympus2/gen/olympus/v1
+--- Module: C:\aAntigravitySpace\Olympus2\50000-Intelligence-Framework\520-Prompt-Synthetics ---
+--- Module: C:\aAntigravitySpace\Olympus2\50000-Intelligence-Framework\530-Semantic-Cartography ---
+go : indexer.go:13:2: no required module provides package 
+github.com/VelociKey/Olympus2/gen/olympus/v1; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (indexer.go:13:2 
+   .../v1; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/Olympus2/gen/olympus/v1
+main.go:22:2: no required module provides package github.com/
+VelociKey/Olympus2/gen/olympus/v1/olympusv1connect; to add 
+it:
+	go get 
+github.com/VelociKey/Olympus2/gen/olympus/v1/olympusv1connect
+main.go:23:2: no required module provides package 
+github.com/VelociKey/Olympus2/pkg/mesh; to add it:
+	go get github.com/VelociKey/Olympus2/pkg/mesh
+P0000-pkg\000-grammar\infrastructure.go:3:8: no required 
+module provides package github.com/VelociKey/Olympus2/Intelli
+gence/SemanticCartographer/pkg/taxonomy; to add it:
+	go get github.com/VelociKey/Olympus2/Intelligence/SemanticCa
+rtographer/pkg/taxonomy
+--- Module: C:\aAntigravitySpace\Olympus2\60000-Information-Storage\610-Memory-Anchors\900-MemoryAnchor ---
+--- Module: C:\aAntigravitySpace\Olympus2\70000-Environmental-Harness\900-EnvironmentHarness ---
+--- Module: C:\aAntigravitySpace\Olympus2\80000-System-Governance\820-Audit\900Audit ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\900-Forge ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\900-Forge\000-internal\000-agent ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\P0000-pkg\000-actor ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\P0000-pkg\000-forge-context ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\P0000-pkg\000-mcp-bridge ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\P0000-pkg\000-mesh ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\P0000-pkg\000-resonance ---
+--- Module: C:\aAntigravitySpace\Olympus2\90000-Enablement-Labs\P0000-pkg\000-whisper ---
+--- Module: C:\aAntigravitySpace\OlympusActors-Cognition\10000-Autonomous-Actors\10600-Cognitive-Specialties\10610-Architectural-Synthesis ---
+--- Module: C:\aAntigravitySpace\OlympusActors-Cognition\10000-Autonomous-Actors\10600-Cognitive-Specialties\10620-Logic-Construction ---
+--- Module: C:\aAntigravitySpace\OlympusActors-Delegation\10000-Autonomous-Actors\10500-Delegation-Management\10520-Market-Coordination ---
+--- Module: C:\aAntigravitySpace\OlympusActors-Delegation\10000-Autonomous-Actors\10500-Delegation-Management\10530-Orchestration-Control ---
+--- Module: C:\aAntigravitySpace\OlympusActors-Delegation\10000-Autonomous-Actors\10700-Processing-Engines\10710-Reasoning-Inference ---
+--- Module: C:\aAntigravitySpace\OlympusAtelier\10000-Autonomous-Actors\000-StyleGuard ---
+--- Module: C:\aAntigravitySpace\OlympusAtelier\90000-Enablement-Labs\930-System-Enablers\000-NomenclatureStabilizer ---
+--- Module: C:\aAntigravitySpace\OlympusForge\20000-Context-Bridges\000-OlympusFabric ---
+go : 000-cmd\000-fabric\main.go:16:2: no required module 
+provides package github.com/VelociKey/OlympusFabric/20000-MCP
+-Servers/OlympusFabric/internal/parser; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (000-cmd\000-fab 
+   ...ser; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/internal/parser
+000-cmd\000-fabric\main.go:17:2: no required module provides 
+package github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/engine; to add it:
+	go get github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/engine
+000-cmd\000-fabric\main.go:18:2: no required module provides 
+package github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/generator; to add it:
+	go get github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/generator
+000-cmd\000-fabric\main.go:19:2: no required module provides 
+package github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/llm; to add it:
+	go get github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/llm
+000-cmd\000-fabric\main.go:20:2: no required module provides 
+package github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/transformer; to add it:
+	go get github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/transformer
+000-internal\000-parser\parser.go:6:2: no required module 
+provides package github.com/VelociKey/OlympusFabric/20000-MCP
+-Servers/OlympusFabric/pkg/ir; to add it:
+	go get github.com/VelociKey/OlympusFabric/20000-MCP-Servers/
+OlympusFabric/pkg/ir
+P0000-pkg\000-orchestrator\state_machine.go:8:2: no required 
+module provides package 
+github.com/VelociKey/Olympus2/pkg/whisper; to add it:
+	go get github.com/VelociKey/Olympus2/pkg/whisper
+--- Module: C:\aAntigravitySpace\OlympusForge\90000-Enablement-Labs\000-Tools\000-tree ---
+--- Module: C:\aAntigravitySpace\OlympusForge\C0200-Execution-Campaigns\000-ForgeToolManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Compute\10000-Autonomous-Actors\900-ComputeManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Compute\20000-Context-Bridges\900-ComputeBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Compute\gen ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Data\10000-Autonomous-Actors\900-DataManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Data\20000-Context-Bridges\900-DataBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Data\gen ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Events\10000-Autonomous-Actors\900-EventManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Events\20000-Context-Bridges\900-EventBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Events\gen ---
+go : 
+olympus\events\v1\eventsv1connect\events.connect.go:11:2: 
+module github.com/VelociKey/OlympusGCP-Events/gen@latest 
+found (v0.0.0-00010101000000-000000000000, replaced by 
+./OlympusGCP-Events/gen), but does not contain package 
+github.com/VelociKey/OlympusGCP-Events/gen/events/v1
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (olympus\events\ 
+   ...s/gen/events/v1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+--- Module: C:\aAntigravitySpace\OlympusGCP-FinOps\10000-Autonomous-Actors\900-FinOpsManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-FinOps\20000-Context-Bridges\900-FinOpsBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-FinOps\gen ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Intelligence\10000-Autonomous-Actors\900-IntelligenceManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Intelligence\20000-Context-Bridges\900-IntelligenceBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Intelligence\gen ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Observability\10000-Autonomous-Actors\900-ObsManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Observability\20000-Context-Bridges\900-ObsBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Observability\gen ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Storage\10000-Autonomous-Actors\900-StorageManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Storage\20000-Context-Bridges\900-StorageBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Storage\gen ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Vault\10000-Autonomous-Actors\900-VaultManager ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Vault\20000-Context-Bridges\900-VaultBridge ---
+--- Module: C:\aAntigravitySpace\OlympusGCP-Vault\gen ---
+go : olympus\vault\v1\vaultv1connect\vault.connect.go:11:2: 
+module github.com/VelociKey/OlympusGCP-Vault/gen@latest 
+found (v0.0.0-00010101000000-000000000000, replaced by 
+./OlympusGCP-Vault/gen), but does not contain package 
+github.com/VelociKey/OlympusGCP-Vault/gen/vault/v1
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (olympus\vault\v 
+   ...lt/gen/vault/v1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+--- Module: C:\aAntigravitySpace\OlympusGrammar\10000-Autonomous-Actors\900-Architect ---
+--- Module: C:\aAntigravitySpace\OlympusGrammar\10000-Autonomous-Actors\910-Builder ---
+--- Module: C:\aAntigravitySpace\OlympusGrammar\10000-Autonomous-Actors\920-Inference ---
+--- Module: C:\aAntigravitySpace\OlympusGrammar\10000-Autonomous-Actors\930-Negotiator ---
+--- Module: C:\aAntigravitySpace\OlympusGrammar\20000-Context-Bridges\000-OlympusGrammar ---
+go : 000-cmd\000-fabric\main.go:22:2: no required module 
+provides package github.com/VelociKey/OlympusGrammar/20000-MC
+P-Servers/OlympusGrammar/pkg/engine; to add it:
+At line:7 char:5
++     go list ./... 2>> $logFile
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (000-cmd\000-fab 
+   ...ine; to add it::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+	go get github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/engine
+000-cmd\000-fabric\main.go:23:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/generator; to add it:
+	go get github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/generator
+000-cmd\000-fabric\main.go:24:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/ir; to add it:
+	go get github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/ir
+000-cmd\000-fabric\main.go:25:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/llm; to add it:
+	go get github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/llm
+000-cmd\000-fabric\main.go:26:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/parser; to add it:
+	go get github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/parser
+000-cmd\000-fabric\main.go:27:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/transformer; to add it:
+	go get github.com/VelociKey/OlympusGrammar/20000-MCP-Servers
+/OlympusGrammar/pkg/transformer
+000-cmd\000-fabric\main.go:28:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/gen/grammar/v1; 
+to add it:
+	go get github.com/VelociKey/OlympusGrammar/gen/grammar/v1
+000-cmd\000-fabric\main.go:29:2: no required module provides 
+package github.com/VelociKey/OlympusGrammar/gen/grammar/v1/gr
+ammarv1connect; to add it:
+	go get github.com/VelociKey/OlympusGrammar/gen/grammar/v1/gr
+ammarv1connect

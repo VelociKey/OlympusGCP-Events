@@ -1,0 +1,9 @@
+go 1.25.7
+
+use (
+	.
+	./10000-Autonomous-Actors/900-EventManager
+	./20000-Context-Bridges/900-EventBridge
+	./gen/olympus/events/v1
+	./gen/olympus/events/v1/eventsv1connect
+)

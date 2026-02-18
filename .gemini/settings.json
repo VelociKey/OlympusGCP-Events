@@ -1,0 +1,20 @@
+{
+  "model": {
+    "name": "gemini-3",
+    "thinkingLevel": "high",
+    "temperature": 1.0
+  },
+  "ui": {
+    "showThinking": true,
+    "theme": "dark"
+  },
+  "context": {
+    "fileFiltering": {
+      "respectGitIgnore": false,
+      "includePatterns": [
+        "**/.antigravity/**/*",
+        "**/.agent/**/*"
+      ]
+    }
+  }
+}

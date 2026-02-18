@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package olympus.events.v1;
+
+option go_package = "github.com/VelociKey/OlympusGCP-Events/gen/events/v1;eventsv1";
+
+service EventsService {
+  // Pub/Sub Intent
+  rpc Publish(PublishRequest) returns (PublishResponse);
+  
+  // Cloud Tasks Intent
+  rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse);
+  rpc PauseQueue(PauseQueueRequest) returns (PauseQueueResponse);
+  rpc ResumeQueue(ResumeQueueRequest) returns (ResumeQueueResponse);
+  rpc ListTasks(ListTasksRequest) returns (ListTasksResponse);
+  
+  // Scheduler Intent
+  rpc CreateJob(CreateJobRequest) returns (CreateJobResponse);
+}
+
+message ResumeQueueRequest {
+  string queue = 1;
+}
+
+message ResumeQueueResponse {
+  int32 dispatched_count = 1;
+}
+
+message ListTasksRequest {
+  string queue = 1;
+}
+
+message ListTasksResponse {
+  repeated string task_ids = 1;
+}
+
+message PublishRequest {
+  string topic = 1;
+  string data = 2;
+}
+
+message PublishResponse {
+  string message_id = 1;
+}
+
+message CreateTaskRequest {
+  string queue = 1;
+  string payload = 2;
+  int32 delay_seconds = 3;
+}
+
+message CreateTaskResponse {
+  string task_name = 1;
+}
+
+message PauseQueueRequest {
+  string queue = 1;
+}
+
+message PauseQueueResponse {
+  bool is_paused = 1;
+}
+
+message CreateJobRequest {
+  string name = 1;
+  string schedule = 2; // cron format
+  string target_url = 3;
+}
+
+message CreateJobResponse {
+  string job_id = 1;
+}
