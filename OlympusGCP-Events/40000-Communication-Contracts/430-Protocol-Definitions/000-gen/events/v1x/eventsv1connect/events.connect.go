@@ -8,7 +8,7 @@ import (
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
-	v1 "OlympusGCP-Events/gen/events/v1x"
+	v1 "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x"
 	http "net/http"
 	strings "strings"
 )
