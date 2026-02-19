@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: events/v1/events.proto
+// source: olympus/events/v1/events.proto
 
 package eventsv1
 
@@ -593,7 +593,7 @@ var File_olympus_events_v1_events_proto protoreflect.FileDescriptor
 
 const file_olympus_events_v1_events_proto_rawDesc = "" +
 	"\n" +
-	"\x1eevents/v1/events.proto\x12\x11olympus.events.v1\"*\n" +
+	"\x1eolympus/events/v1/events.proto\x12\x11olympus.events.v1\"*\n" +
 	"\x12ResumeQueueRequest\x12\x14\n" +
 	"\x05queue\x18\x01 \x01(\tR\x05queue\"@\n" +
 	"\x13ResumeQueueResponse\x12)\n" +
@@ -633,7 +633,7 @@ const file_olympus_events_v1_events_proto_rawDesc = "" +
 	"PauseQueue\x12$.olympus.events.v1.PauseQueueRequest\x1a%.olympus.events.v1.PauseQueueResponse\x12\\\n" +
 	"\vResumeQueue\x12%.olympus.events.v1.ResumeQueueRequest\x1a&.olympus.events.v1.ResumeQueueResponse\x12V\n" +
 	"\tListTasks\x12#.olympus.events.v1.ListTasksRequest\x1a$.olympus.events.v1.ListTasksResponse\x12V\n" +
-	"\tCreateJob\x12#.olympus.events.v1.CreateJobRequest\x1a$.olympus.events.v1.CreateJobResponseB?Z=OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x;eventsv1b\x06proto3"
+	"\tCreateJob\x12#.olympus.events.v1.CreateJobRequest\x1a$.olympus.events.v1.CreateJobResponseBfZdOlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x;eventsv1b\x06proto3"
 
 var (
 	file_olympus_events_v1_events_proto_rawDescOnce sync.Once
