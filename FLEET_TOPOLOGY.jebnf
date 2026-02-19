@@ -1,6 +1,0 @@
-# Olympus Fleet Topology (jeBNF)
-mapped_at = "2026-02-17T11:07:01-05:00"
-
-[Nodes]
-
-[Dependency_Edges]
