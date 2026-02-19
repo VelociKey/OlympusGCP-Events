@@ -1,4 +1,4 @@
-module OlympusGCP-Events
+module OlympusAssurance
 
 go 1.25.7
 
@@ -57,8 +57,6 @@ replace OlympusActors-Delegation => ../OlympusActors-Delegation
 
 replace OlympusAscent => ../OlympusAscent
 
-replace OlympusAssurance => ../OlympusAssurance
-
 replace OlympusAtelier => ../OlympusAtelier
 
 replace OlympusFabric => ../OlympusFabric
@@ -70,6 +68,8 @@ replace OlympusForge/00000-Identity-Foundations/P0000-pkg/000-fleet => ../Olympu
 replace OlympusGCP-Compute => ../OlympusGCP-Compute
 
 replace OlympusGCP-Data => ../OlympusGCP-Data
+
+replace OlympusGCP-Events => ../OlympusGCP-Events
 
 replace OlympusGCP-FinOps => ../OlympusGCP-FinOps
 
@@ -103,10 +103,12 @@ replace gopkg.in/check.v1 => ../Olympus2/00000-Identity-Foundations/P0000-pkg/ch
 
 require (
 	Olympus2/90000-Enablement-Labs/P0000-pkg/000-mcp-bridge v0.0.0-00010101000000-000000000000
+	OlympusGCP-FinOps v0.0.0-00010101000000-000000000000
+	OlympusGCP-Intelligence v0.0.0-00010101000000-000000000000
+	OlympusGCP-Storage v0.0.0-00010101000000-000000000000
+	OlympusGCP-Vault v0.0.0-00010101000000-000000000000
 	connectrpc.com/connect v1.19.1
 	github.com/mark3labs/mcp-go v0.44.0
-	golang.org/x/net v0.50.0
-	google.golang.org/protobuf v1.36.11
 )
 
 require (
@@ -118,6 +120,6 @@ require (
 	github.com/spf13/cast v1.7.1 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect
 	github.com/yosida95/uritemplate/v3 v3.0.2 // indirect
-	golang.org/x/text v0.34.0 // indirect
+	google.golang.org/protobuf v1.36.9 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
