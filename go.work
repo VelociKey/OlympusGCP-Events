@@ -2,6 +2,7 @@ go 1.25.7
 
 use (
 	./Olympus2
+	./Olympus2/90000-Enablement-Labs/.000-Tools/fleet-sync-gitignore
 	./OlympusActors-Cognition
 	./OlympusActors-Delegation
 	./OlympusAscent
