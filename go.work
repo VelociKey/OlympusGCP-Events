@@ -12,6 +12,7 @@ use (
 	./OlympusForge
 	./OlympusForge/90000-Enablement-Labs/900-Forge
 	./OlympusForge/ZC0400-Sovereign-Source/mcp-go
+	./OlympusGCP-Artifacts
 	./OlympusGCP-Compute
 	./OlympusGCP-Data
 	./OlympusGCP-Events
@@ -21,6 +22,7 @@ use (
 	./OlympusGCP-Messaging
 	./OlympusGCP-Observability
 	./OlympusGCP-Storage
+	./OlympusGCP-Tasks
 	./OlympusGCP-Vault
 	./OlympusGrammar
 	./OlympusInfrastructure
