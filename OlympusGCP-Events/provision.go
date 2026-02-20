@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 import (
 	"fmt"
@@ -6,10 +6,6 @@ import (
 	"os"
 
 	"os/exec"
-
-	"path/filepath"
-
-"runtime"
 )
 
 func main() {
@@ -25,18 +21,15 @@ func main() {
 	}
 	for _, t := range targets {
 
-		fmt.Printf("Building %s...\n", t.name)
-		binaryName := filepath.Base(t.path)
+		fmt.Printf("Building %s via Dagger...\n", t.name)
 
-		if runtime.GOOS == "windows" {
-			binaryName += ".exe"
-		}
-
-		cmd := exec.Command("go", "build", "-o", binaryName, "main.go")
-		cmd.Dir = filepath.Join(cluster, t.path)
+		// Execute Dagger workstation-native build
+		cmd := exec.Command("dagger", "call", "build")
+		cmd.Dir = "." // Cluster root
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		if err := cmd.Run(); err != nil {
+			fmt.Printf("Dagger build failed for %s: %v\n", t.name, err)
 			os.Exit(1)
 		}
 	}

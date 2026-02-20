@@ -1,0 +1,30 @@
+go 1.25.7
+
+use (
+	./Olympus2
+	./Olympus2/00000-Identity-Foundations/P0000-pkg/check.v1
+	./Olympus2/00000-Identity-Foundations/P0000-pkg/go-internal
+	./Olympus2/00000-Identity-Foundations/P0000-pkg/pretty
+	./Olympus2/00000-Identity-Foundations/P0000-pkg/text
+	./OlympusActors-Cognition
+	./OlympusActors-Delegation
+	./OlympusAscent
+	./OlympusAssurance
+	./OlympusAtelier
+	./OlympusFabric
+	./OlympusForge
+	./OlympusForge/ZC0400-Sovereign-Source/mcp-go
+	./OlympusGCP-Compute
+	./OlympusGCP-Data
+	./OlympusGCP-Events
+	./OlympusGCP-FinOps
+	./OlympusGCP-Firebase
+	./OlympusGCP-Intelligence
+	./OlympusGCP-Messaging
+	./OlympusGCP-Observability
+	./OlympusGCP-Storage
+	./OlympusGCP-Vault
+	./OlympusGrammar
+	./OlympusInfrastructure
+	./OlympusVision
+)

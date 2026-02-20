@@ -1,0 +1,45 @@
+{
+    "mandates":  {
+                     "module_standard":  "Short-name only (No github.com/VelociKey/ prefixes)",
+                     "branching_strategy":  "production, staging, development (default)",
+                     "logging_standard":  "log/slog structured logging",
+                     "telemetry_format":  "LPSV (centralized to Olympus2/C0500/...)"
+                 },
+    "workspace_roots":  [
+                            "Olympus2",
+                            "OlympusActors-Cognition",
+                            "OlympusActors-Delegation",
+                            "OlympusAscent",
+                            "OlympusAssurance",
+                            "OlympusAtelier",
+                            "OlympusFabric",
+                            "OlympusForge",
+                            "OlympusGCP-Compute",
+                            "OlympusGCP-Data",
+                            "OlympusGCP-Events",
+                            "OlympusGCP-FinOps",
+                            "OlympusGCP-Firebase",
+                            "OlympusGCP-Intelligence",
+                            "OlympusGCP-Messaging",
+                            "OlympusGCP-Observability",
+                            "OlympusGCP-Storage",
+                            "OlympusGCP-Vault",
+                            "OlympusGrammar",
+                            "OlympusInfrastructure",
+                            "OlympusVision"
+                        ],
+    "fleet_name":  "Olympus2",
+    "version":  "1.0.0",
+    "substrate_registry":  {
+                               "ObservabilityManager":  8097,
+                               "MeshHub":  8090,
+                               "StorageManager":  8091,
+                               "VaultManager":  8092,
+                               "ComputeManager":  8095,
+                               "FinOpsManager":  8098,
+                               "DataManager":  8093,
+                               "FirebaseManager":  8099,
+                               "IntelligenceManager":  8096,
+                               "EventsManager":  8094
+                           }
+}
