@@ -10,24 +10,42 @@ import (
 
 	cloudtasks "cloud.google.com/go/cloudtasks/apiv2"
 	taskspb "cloud.google.com/go/cloudtasks/apiv2/cloudtaskspb"
+	"cloud.google.com/go/pubsub"
 	"connectrpc.com/connect"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 	"google.golang.org/api/option"
 
 	whisper "Olympus2/90000-Enablement-Labs/P0000-pkg/000-whisper"
-	eventsv1 "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x"
-	"OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x/eventsv1connect"
+	eventsv1 "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1"
+	"OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1/eventsv1connect"
 )
 
 type EventsServer struct {
-	tasksClient *cloudtasks.Client
+	tasksClient  *cloudtasks.Client
+	pubsubClient *pubsub.Client
 }
 
 func (s *EventsServer) Publish(ctx context.Context, req *connect.Request[eventsv1.PublishRequest]) (*connect.Response[eventsv1.PublishResponse], error) {
 	slog.Info("EventsManager: Publish", "topic", req.Msg.Topic)
-	// Emulation for Publish logic
-	return connect.NewResponse(&eventsv1.PublishResponse{MessageId: "emulated_msg_123"}), nil
+
+	topic := s.pubsubClient.Topic(req.Msg.Topic)
+	// Create the topic if it doesn't exist to make local dev seamless
+	exists, err := topic.Exists(ctx)
+	if err == nil && !exists {
+		topic, _ = s.pubsubClient.CreateTopic(ctx, req.Msg.Topic)
+	}
+
+	result := topic.Publish(ctx, &pubsub.Message{
+		Data: []byte(req.Msg.Data),
+	})
+
+	serverID, err := result.Get(ctx)
+	if err != nil {
+		return nil, connect.NewError(connect.CodeInternal, err)
+	}
+
+	return connect.NewResponse(&eventsv1.PublishResponse{MessageId: serverID}), nil
 }
 
 func (s *EventsServer) CreateTask(ctx context.Context, req *connect.Request[eventsv1.CreateTaskRequest]) (*connect.Response[eventsv1.CreateTaskResponse], error) {
@@ -86,7 +104,23 @@ func main() {
 	}
 	defer client.Close()
 
-	server := &EventsServer{tasksClient: client}
+	// PubSub Emulator
+	psHost := os.Getenv("PUBSUB_EMULATOR_HOST")
+	if psHost == "" {
+		psHost = "localhost:8085"
+		os.Setenv("PUBSUB_EMULATOR_HOST", psHost)
+	}
+
+	pubsubClient, err := pubsub.NewClient(ctx, "olympus-project", option.WithoutAuthentication())
+	if err != nil {
+		log.Fatalf("failed to create pubsub client: %v", err)
+	}
+	defer pubsubClient.Close()
+
+	server := &EventsServer{
+		tasksClient:  client,
+		pubsubClient: pubsubClient,
+	}
 
 	mux := http.NewServeMux()
 	path, handler := eventsv1connect.NewEventsServiceHandler(server)

@@ -6,15 +6,18 @@
   },
   "ui": {
     "showThinking": true,
-    "theme": "dark"
+    "theme": "Google Code Light"
   },
   "context": {
     "fileFiltering": {
-      "respectGitIgnore": false,
+      "respectGitIgnore": true,
       "includePatterns": [
         "**/.antigravity/**/*",
-        "**/.agent/**/*"
-      ]
+        "**/.agent/**/*",
+        "**/*.tf",
+        "**/50000-Intelligence-Framework/K0000-KnowledgeAnchor/000-ADR/**/*.md"
+      ],
+      "excludePatterns": []
     }
   }
 }

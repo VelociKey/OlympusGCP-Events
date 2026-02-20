@@ -10,8 +10,8 @@ import (
 	"connectrpc.com/connect"
 	"go.opentelemetry.io/otel"
 
-	intelligencev1 "OlympusGCP-Intelligence/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/intelligence/v1x"
-	"OlympusGCP-Intelligence/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/intelligence/v1x/intelligencev1connect"
+	intelligencev1 "OlympusGCP-Intelligence/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/intelligence/v1"
+	"OlympusGCP-Intelligence/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/intelligence/v1/intelligencev1connect"
 	"Olympus2/90000-Enablement-Labs/P0000-pkg/000-whisper"
 	econotel "Olympus2/90000-Enablement-Labs/P0000-pkg/000-econotel"
 )

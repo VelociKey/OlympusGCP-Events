@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package olympus.events.v1;
 
-option go_package = "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x;eventsv1";
+option go_package = "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1;eventsv1";
 
 service EventsService {
   // Pub/Sub Intent

@@ -5,7 +5,7 @@
 package eventsv1connect
 
 import (
-	v1x "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1x"
+	v1 "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1"
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
@@ -53,14 +53,14 @@ const (
 // EventsServiceClient is a client for the olympus.events.v1.EventsService service.
 type EventsServiceClient interface {
 	// Pub/Sub Intent
-	Publish(context.Context, *connect.Request[v1x.PublishRequest]) (*connect.Response[v1x.PublishResponse], error)
+	Publish(context.Context, *connect.Request[v1.PublishRequest]) (*connect.Response[v1.PublishResponse], error)
 	// Cloud Tasks Intent
-	CreateTask(context.Context, *connect.Request[v1x.CreateTaskRequest]) (*connect.Response[v1x.CreateTaskResponse], error)
-	PauseQueue(context.Context, *connect.Request[v1x.PauseQueueRequest]) (*connect.Response[v1x.PauseQueueResponse], error)
-	ResumeQueue(context.Context, *connect.Request[v1x.ResumeQueueRequest]) (*connect.Response[v1x.ResumeQueueResponse], error)
-	ListTasks(context.Context, *connect.Request[v1x.ListTasksRequest]) (*connect.Response[v1x.ListTasksResponse], error)
+	CreateTask(context.Context, *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error)
+	PauseQueue(context.Context, *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error)
+	ResumeQueue(context.Context, *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error)
+	ListTasks(context.Context, *connect.Request[v1.ListTasksRequest]) (*connect.Response[v1.ListTasksResponse], error)
 	// Scheduler Intent
-	CreateJob(context.Context, *connect.Request[v1x.CreateJobRequest]) (*connect.Response[v1x.CreateJobResponse], error)
+	CreateJob(context.Context, *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error)
 }
 
 // NewEventsServiceClient constructs a client for the olympus.events.v1.EventsService service. By
@@ -72,39 +72,39 @@ type EventsServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewEventsServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) EventsServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
-	eventsServiceMethods := v1x.File_olympus_events_v1_events_proto.Services().ByName("EventsService").Methods()
+	eventsServiceMethods := v1.File_olympus_events_v1_events_proto.Services().ByName("EventsService").Methods()
 	return &eventsServiceClient{
-		publish: connect.NewClient[v1x.PublishRequest, v1x.PublishResponse](
+		publish: connect.NewClient[v1.PublishRequest, v1.PublishResponse](
 			httpClient,
 			baseURL+EventsServicePublishProcedure,
 			connect.WithSchema(eventsServiceMethods.ByName("Publish")),
 			connect.WithClientOptions(opts...),
 		),
-		createTask: connect.NewClient[v1x.CreateTaskRequest, v1x.CreateTaskResponse](
+		createTask: connect.NewClient[v1.CreateTaskRequest, v1.CreateTaskResponse](
 			httpClient,
 			baseURL+EventsServiceCreateTaskProcedure,
 			connect.WithSchema(eventsServiceMethods.ByName("CreateTask")),
 			connect.WithClientOptions(opts...),
 		),
-		pauseQueue: connect.NewClient[v1x.PauseQueueRequest, v1x.PauseQueueResponse](
+		pauseQueue: connect.NewClient[v1.PauseQueueRequest, v1.PauseQueueResponse](
 			httpClient,
 			baseURL+EventsServicePauseQueueProcedure,
 			connect.WithSchema(eventsServiceMethods.ByName("PauseQueue")),
 			connect.WithClientOptions(opts...),
 		),
-		resumeQueue: connect.NewClient[v1x.ResumeQueueRequest, v1x.ResumeQueueResponse](
+		resumeQueue: connect.NewClient[v1.ResumeQueueRequest, v1.ResumeQueueResponse](
 			httpClient,
 			baseURL+EventsServiceResumeQueueProcedure,
 			connect.WithSchema(eventsServiceMethods.ByName("ResumeQueue")),
 			connect.WithClientOptions(opts...),
 		),
-		listTasks: connect.NewClient[v1x.ListTasksRequest, v1x.ListTasksResponse](
+		listTasks: connect.NewClient[v1.ListTasksRequest, v1.ListTasksResponse](
 			httpClient,
 			baseURL+EventsServiceListTasksProcedure,
 			connect.WithSchema(eventsServiceMethods.ByName("ListTasks")),
 			connect.WithClientOptions(opts...),
 		),
-		createJob: connect.NewClient[v1x.CreateJobRequest, v1x.CreateJobResponse](
+		createJob: connect.NewClient[v1.CreateJobRequest, v1.CreateJobResponse](
 			httpClient,
 			baseURL+EventsServiceCreateJobProcedure,
 			connect.WithSchema(eventsServiceMethods.ByName("CreateJob")),
@@ -115,55 +115,55 @@ func NewEventsServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 
 // eventsServiceClient implements EventsServiceClient.
 type eventsServiceClient struct {
-	publish     *connect.Client[v1x.PublishRequest, v1x.PublishResponse]
-	createTask  *connect.Client[v1x.CreateTaskRequest, v1x.CreateTaskResponse]
-	pauseQueue  *connect.Client[v1x.PauseQueueRequest, v1x.PauseQueueResponse]
-	resumeQueue *connect.Client[v1x.ResumeQueueRequest, v1x.ResumeQueueResponse]
-	listTasks   *connect.Client[v1x.ListTasksRequest, v1x.ListTasksResponse]
-	createJob   *connect.Client[v1x.CreateJobRequest, v1x.CreateJobResponse]
+	publish     *connect.Client[v1.PublishRequest, v1.PublishResponse]
+	createTask  *connect.Client[v1.CreateTaskRequest, v1.CreateTaskResponse]
+	pauseQueue  *connect.Client[v1.PauseQueueRequest, v1.PauseQueueResponse]
+	resumeQueue *connect.Client[v1.ResumeQueueRequest, v1.ResumeQueueResponse]
+	listTasks   *connect.Client[v1.ListTasksRequest, v1.ListTasksResponse]
+	createJob   *connect.Client[v1.CreateJobRequest, v1.CreateJobResponse]
 }
 
 // Publish calls olympus.events.v1.EventsService.Publish.
-func (c *eventsServiceClient) Publish(ctx context.Context, req *connect.Request[v1x.PublishRequest]) (*connect.Response[v1x.PublishResponse], error) {
+func (c *eventsServiceClient) Publish(ctx context.Context, req *connect.Request[v1.PublishRequest]) (*connect.Response[v1.PublishResponse], error) {
 	return c.publish.CallUnary(ctx, req)
 }
 
 // CreateTask calls olympus.events.v1.EventsService.CreateTask.
-func (c *eventsServiceClient) CreateTask(ctx context.Context, req *connect.Request[v1x.CreateTaskRequest]) (*connect.Response[v1x.CreateTaskResponse], error) {
+func (c *eventsServiceClient) CreateTask(ctx context.Context, req *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error) {
 	return c.createTask.CallUnary(ctx, req)
 }
 
 // PauseQueue calls olympus.events.v1.EventsService.PauseQueue.
-func (c *eventsServiceClient) PauseQueue(ctx context.Context, req *connect.Request[v1x.PauseQueueRequest]) (*connect.Response[v1x.PauseQueueResponse], error) {
+func (c *eventsServiceClient) PauseQueue(ctx context.Context, req *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error) {
 	return c.pauseQueue.CallUnary(ctx, req)
 }
 
 // ResumeQueue calls olympus.events.v1.EventsService.ResumeQueue.
-func (c *eventsServiceClient) ResumeQueue(ctx context.Context, req *connect.Request[v1x.ResumeQueueRequest]) (*connect.Response[v1x.ResumeQueueResponse], error) {
+func (c *eventsServiceClient) ResumeQueue(ctx context.Context, req *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error) {
 	return c.resumeQueue.CallUnary(ctx, req)
 }
 
 // ListTasks calls olympus.events.v1.EventsService.ListTasks.
-func (c *eventsServiceClient) ListTasks(ctx context.Context, req *connect.Request[v1x.ListTasksRequest]) (*connect.Response[v1x.ListTasksResponse], error) {
+func (c *eventsServiceClient) ListTasks(ctx context.Context, req *connect.Request[v1.ListTasksRequest]) (*connect.Response[v1.ListTasksResponse], error) {
 	return c.listTasks.CallUnary(ctx, req)
 }
 
 // CreateJob calls olympus.events.v1.EventsService.CreateJob.
-func (c *eventsServiceClient) CreateJob(ctx context.Context, req *connect.Request[v1x.CreateJobRequest]) (*connect.Response[v1x.CreateJobResponse], error) {
+func (c *eventsServiceClient) CreateJob(ctx context.Context, req *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error) {
 	return c.createJob.CallUnary(ctx, req)
 }
 
 // EventsServiceHandler is an implementation of the olympus.events.v1.EventsService service.
 type EventsServiceHandler interface {
 	// Pub/Sub Intent
-	Publish(context.Context, *connect.Request[v1x.PublishRequest]) (*connect.Response[v1x.PublishResponse], error)
+	Publish(context.Context, *connect.Request[v1.PublishRequest]) (*connect.Response[v1.PublishResponse], error)
 	// Cloud Tasks Intent
-	CreateTask(context.Context, *connect.Request[v1x.CreateTaskRequest]) (*connect.Response[v1x.CreateTaskResponse], error)
-	PauseQueue(context.Context, *connect.Request[v1x.PauseQueueRequest]) (*connect.Response[v1x.PauseQueueResponse], error)
-	ResumeQueue(context.Context, *connect.Request[v1x.ResumeQueueRequest]) (*connect.Response[v1x.ResumeQueueResponse], error)
-	ListTasks(context.Context, *connect.Request[v1x.ListTasksRequest]) (*connect.Response[v1x.ListTasksResponse], error)
+	CreateTask(context.Context, *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error)
+	PauseQueue(context.Context, *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error)
+	ResumeQueue(context.Context, *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error)
+	ListTasks(context.Context, *connect.Request[v1.ListTasksRequest]) (*connect.Response[v1.ListTasksResponse], error)
 	// Scheduler Intent
-	CreateJob(context.Context, *connect.Request[v1x.CreateJobRequest]) (*connect.Response[v1x.CreateJobResponse], error)
+	CreateJob(context.Context, *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error)
 }
 
 // NewEventsServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -172,7 +172,7 @@ type EventsServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewEventsServiceHandler(svc EventsServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
-	eventsServiceMethods := v1x.File_olympus_events_v1_events_proto.Services().ByName("EventsService").Methods()
+	eventsServiceMethods := v1.File_olympus_events_v1_events_proto.Services().ByName("EventsService").Methods()
 	eventsServicePublishHandler := connect.NewUnaryHandler(
 		EventsServicePublishProcedure,
 		svc.Publish,
@@ -232,26 +232,26 @@ func NewEventsServiceHandler(svc EventsServiceHandler, opts ...connect.HandlerOp
 // UnimplementedEventsServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedEventsServiceHandler struct{}
 
-func (UnimplementedEventsServiceHandler) Publish(context.Context, *connect.Request[v1x.PublishRequest]) (*connect.Response[v1x.PublishResponse], error) {
+func (UnimplementedEventsServiceHandler) Publish(context.Context, *connect.Request[v1.PublishRequest]) (*connect.Response[v1.PublishResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("olympus.events.v1.EventsService.Publish is not implemented"))
 }
 
-func (UnimplementedEventsServiceHandler) CreateTask(context.Context, *connect.Request[v1x.CreateTaskRequest]) (*connect.Response[v1x.CreateTaskResponse], error) {
+func (UnimplementedEventsServiceHandler) CreateTask(context.Context, *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("olympus.events.v1.EventsService.CreateTask is not implemented"))
 }
 
-func (UnimplementedEventsServiceHandler) PauseQueue(context.Context, *connect.Request[v1x.PauseQueueRequest]) (*connect.Response[v1x.PauseQueueResponse], error) {
+func (UnimplementedEventsServiceHandler) PauseQueue(context.Context, *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("olympus.events.v1.EventsService.PauseQueue is not implemented"))
 }
 
-func (UnimplementedEventsServiceHandler) ResumeQueue(context.Context, *connect.Request[v1x.ResumeQueueRequest]) (*connect.Response[v1x.ResumeQueueResponse], error) {
+func (UnimplementedEventsServiceHandler) ResumeQueue(context.Context, *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("olympus.events.v1.EventsService.ResumeQueue is not implemented"))
 }
 
-func (UnimplementedEventsServiceHandler) ListTasks(context.Context, *connect.Request[v1x.ListTasksRequest]) (*connect.Response[v1x.ListTasksResponse], error) {
+func (UnimplementedEventsServiceHandler) ListTasks(context.Context, *connect.Request[v1.ListTasksRequest]) (*connect.Response[v1.ListTasksResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("olympus.events.v1.EventsService.ListTasks is not implemented"))
 }
 
-func (UnimplementedEventsServiceHandler) CreateJob(context.Context, *connect.Request[v1x.CreateJobRequest]) (*connect.Response[v1x.CreateJobResponse], error) {
+func (UnimplementedEventsServiceHandler) CreateJob(context.Context, *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("olympus.events.v1.EventsService.CreateJob is not implemented"))
 }

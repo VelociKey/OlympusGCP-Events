@@ -1,0 +1,49 @@
+{"time":"2026-02-20T13:45:29.0222439-05:00","level":"INFO","msg":"Starting AIHub Master Forge Provisioner","base":"C:\\aAntigravitySpace\\OlympusForge\\90000-Enablement-Labs\\000-Tools"}
+{"time":"2026-02-20T13:45:29.0227677-05:00","level":"INFO","msg":"Installing via go install","tool":"golangci-lint","category":"authoring","package":"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.8"}
+{"time":"2026-02-20T13:45:29.7504744-05:00","level":"INFO","msg":"Provisioning successful","tool":"golangci-lint","category":"authoring"}
+{"time":"2026-02-20T13:45:29.7504744-05:00","level":"INFO","msg":"Installing via go install","tool":"air","category":"authoring","package":"github.com/air-verse/air@v1.64.5"}
+{"time":"2026-02-20T13:45:30.3410367-05:00","level":"INFO","msg":"Provisioning successful","tool":"air","category":"authoring"}
+{"time":"2026-02-20T13:45:30.3410367-05:00","level":"INFO","msg":"Installing via go install","tool":"buf","category":"authoring","package":"github.com/bufbuild/buf/cmd/buf@v1.50.0"}
+{"time":"2026-02-20T13:45:30.9613868-05:00","level":"INFO","msg":"Provisioning successful","tool":"buf","category":"authoring"}
+{"time":"2026-02-20T13:45:30.9613868-05:00","level":"INFO","msg":"Installing via go install","tool":"protoc-gen-connect-go","category":"authoring","package":"connectrpc.com/connect/cmd/protoc-gen-connect-go@v1.18.1"}
+{"time":"2026-02-20T13:45:31.4330679-05:00","level":"INFO","msg":"Provisioning successful","tool":"protoc-gen-connect-go","category":"authoring"}
+{"time":"2026-02-20T13:45:31.4330679-05:00","level":"WARN","msg":"GH-Release method not fully implemented in this preview, skipping","tool":"gh","category":"authoring","repo":"cli/cli"}
+{"time":"2026-02-20T13:45:31.4330679-05:00","level":"INFO","msg":"Provisioning successful","tool":"gh","category":"authoring"}
+{"time":"2026-02-20T13:45:31.4330679-05:00","level":"WARN","msg":"GH-Release method not fully implemented in this preview, skipping","tool":"trivy","category":"infrastructure","repo":"aquasecurity/trivy"}
+{"time":"2026-02-20T13:45:31.4330679-05:00","level":"INFO","msg":"Provisioning successful","tool":"trivy","category":"infrastructure"}
+{"time":"2026-02-20T13:45:31.4334517-05:00","level":"WARN","msg":"GH-Release method not fully implemented in this preview, skipping","tool":"tofu","category":"infrastructure","repo":"opentofu/opentofu"}
+{"time":"2026-02-20T13:45:31.4334517-05:00","level":"INFO","msg":"Provisioning successful","tool":"tofu","category":"infrastructure"}
+{"time":"2026-02-20T13:45:31.4334517-05:00","level":"WARN","msg":"GH-Release method not fully implemented in this preview, skipping","tool":"jq","category":"infrastructure","repo":"jqlang/jq"}
+{"time":"2026-02-20T13:45:31.4334517-05:00","level":"INFO","msg":"Provisioning successful","tool":"jq","category":"infrastructure"}
+{"time":"2026-02-20T13:45:31.4334517-05:00","level":"INFO","msg":"Installing via go install","tool":"dagger","category":"infrastructure","package":"github.com/dagger/dagger/cmd/dagger@v0.19.11"}
+{"time":"2026-02-20T13:45:31.6515306-05:00","level":"ERROR","msg":"Provisioning failed","tool":"dagger","category":"infrastructure","error":"go install failed: go: github.com/dagger/dagger/cmd/dagger@v0.19.11 (in github.com/dagger/dagger@v0.19.11):\n\tThe go.mod file for the module providing named packages contains one or\n\tmore replace directives. It must not contain directives that would cause\n\tit to be interpreted differently than if it were the main module.\n: exit status 1"}
+{"time":"2026-02-20T13:45:31.6515306-05:00","level":"WARN","msg":"GH-Release method not fully implemented in this preview, skipping","tool":"otelcol","category":"sovereignty","repo":"open-telemetry/opentelemetry-collector-releases"}
+{"time":"2026-02-20T13:45:31.6515306-05:00","level":"INFO","msg":"Provisioning successful","tool":"otelcol","category":"sovereignty"}
+{"time":"2026-02-20T13:45:31.6515306-05:00","level":"INFO","msg":"Installing via go install","tool":"dlv","category":"intelligence","package":"github.com/go-delve/delve/cmd/dlv@latest"}
+{"time":"2026-02-20T13:45:32.2826451-05:00","level":"INFO","msg":"Provisioning successful","tool":"dlv","category":"intelligence"}
+{"time":"2026-02-20T13:45:32.2826451-05:00","level":"INFO","msg":"Creating host shim","tool":"ollama","category":"intelligence"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Provisioning successful","tool":"ollama","category":"intelligence"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Creating host shim","tool":"jules","category":"intelligence"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Provisioning successful","tool":"jules","category":"intelligence"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Creating host shim","tool":"gcloud","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Provisioning successful","tool":"gcloud","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"firebase","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.2831486-05:00","level":"INFO","msg":"Provisioning successful","tool":"firebase","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"pubsub-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning successful","tool":"pubsub-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"bigtable-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning successful","tool":"bigtable-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"datastore-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning successful","tool":"datastore-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"firestore-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning successful","tool":"firestore-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"spanner-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning successful","tool":"spanner-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning local fleet bundle","tool":"storage-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Provisioning successful","tool":"storage-emulator","category":"infrastructure"}
+{"time":"2026-02-20T13:45:32.283832-05:00","level":"INFO","msg":"Installing via go install","tool":"govulncheck","category":"validation","package":"golang.org/x/vuln/cmd/govulncheck@latest"}
+{"time":"2026-02-20T13:45:32.7125294-05:00","level":"INFO","msg":"Provisioning successful","tool":"govulncheck","category":"validation"}
+{"time":"2026-02-20T13:45:32.7125294-05:00","level":"INFO","msg":"Installing via go install","tool":"gosec","category":"validation","package":"github.com/securego/gosec/v2/cmd/gosec@latest"}
+{"time":"2026-02-20T13:45:33.4189359-05:00","level":"INFO","msg":"Provisioning successful","tool":"gosec","category":"validation"}
+{"time":"2026-02-20T13:45:33.4189359-05:00","level":"INFO","msg":"Installing via go install","tool":"nuclei","category":"validation","package":"github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest"}
+{"time":"2026-02-20T13:45:34.3408606-05:00","level":"INFO","msg":"Provisioning successful","tool":"nuclei","category":"validation"}

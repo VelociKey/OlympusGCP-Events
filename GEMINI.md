@@ -9,8 +9,8 @@
 ## Module Naming & Imports
 - **STRICT REQUIREMENT**: Never use github.com/VelociKey/ prefixes in go.mod files or Go import statements.
 - All modules are named exactly after their workspace directory root.
-- Local resolution MUST be handled via 
-replace directives pointing to relative local paths.
+- **STRICT REQUIREMENT**: Do NOT use `replace` directives in `go.mod` files for local resolution.
+- Local cross-module dependency resolution MUST be handled exclusively via the root `go.work` file (using `go work use <dir>`).
 
 ## Logging & Telemetry
 - Always use log/slog for structured logging in Go code.
