@@ -12,22 +12,11 @@ use (
 	./OlympusForge
 	./OlympusForge/90000-Enablement-Labs/900-Forge
 	./OlympusForge/ZC0400-Sovereign-Source/mcp-go
-	./OlympusGCP-Artifacts
-	./OlympusGCP-Compute
-	./OlympusGCP-Data
 	./OlympusGCP-Data-AI
-	./OlympusGCP-Events
 	./OlympusGCP-FinOps
-	./OlympusGCP-Firebase
 	./OlympusGCP-Foundation
-	./OlympusGCP-Intelligence
-	./OlympusGCP-Messaging
-	./OlympusGCP-Observability
 	./OlympusGCP-Orchestration
 	./OlympusGCP-Platform
-	./OlympusGCP-Storage
-	./OlympusGCP-Tasks
-	./OlympusGCP-Vault
 	./OlympusGrammar
 	./OlympusInfrastructure
 	./OlympusVision
