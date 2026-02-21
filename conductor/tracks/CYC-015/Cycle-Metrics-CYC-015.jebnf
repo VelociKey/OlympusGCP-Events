@@ -1,0 +1,62 @@
+<cycle_metrics> ::= <cycle_header> <sub_cycles> <cycle_summary>
+
+<cycle_header> ::=
+  "Cycle ID: " <id> "\n"
+  "Mission: " <string> "\n"
+
+<sub_cycles> ::= <sub_cycle>+
+
+<sub_cycle> ::=
+  "Sub-Cycle: " <id> "\n"
+  "Expected Human Effort (minutes): " <integer> "\n"
+  <steps>
+  "Actual AI-Assisted Human Work (minutes): " <integer> "\n"
+  "Efficiency Multiplier: " <float> "x\n"
+
+<steps> ::= <step>+
+
+<step> ::=
+  "Step: " <string> "\n"
+  "Start Time: " <datetime> "\n"
+  "Stop Time: " <datetime> "\n"
+  "Duration (minutes): " <integer> "\n"
+
+<cycle_summary> ::=
+  "Total Expected Effort: " <integer> "\n"
+  "Total Actual Effort: " <integer> "\n"
+  "Overall Efficiency: " <float> "x\n"
+
+// --- CYC-015 Tracking Data ---
+Cycle ID: CYC-015
+Mission: Dagger Pipeline Stabilization
+
+Sub-Cycle: C15.1
+Expected Human Effort (minutes): 360
+Step: Dagger Pipeline Diagnostics
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Sub-Cycle: C15.2
+Expected Human Effort (minutes): 480
+Step: Directory Context Mounting
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Sub-Cycle: C15.3
+Expected Human Effort (minutes): 240
+Step: Build Engine Verification
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Total Expected Effort: 1080
+Total Actual Effort: 0
+Overall Efficiency: 0.0x
