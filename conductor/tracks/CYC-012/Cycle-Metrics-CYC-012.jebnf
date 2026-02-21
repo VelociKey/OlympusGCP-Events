@@ -1,0 +1,71 @@
+<cycle_metrics> ::= <cycle_header> <sub_cycles> <cycle_summary>
+
+<cycle_header> ::=
+  "Cycle ID: " <id> "\n"
+  "Mission: " <string> "\n"
+
+<sub_cycles> ::= <sub_cycle>+
+
+<sub_cycle> ::=
+  "Sub-Cycle: " <id> "\n"
+  "Expected Human Effort (minutes): " <integer> "\n"
+  <steps>
+  "Actual AI-Assisted Human Work (minutes): " <integer> "\n"
+  "Efficiency Multiplier: " <float> "x\n"
+
+<steps> ::= <step>+
+
+<step> ::=
+  "Step: " <string> "\n"
+  "Start Time: " <datetime> "\n"
+  "Stop Time: " <datetime> "\n"
+  "Duration (minutes): " <integer> "\n"
+
+<cycle_summary> ::=
+  "Total Expected Effort: " <integer> "\n"
+  "Total Actual Effort: " <integer> "\n"
+  "Overall Efficiency: " <float> "x\n"
+
+// --- CYC-012 Tracking Data ---
+Cycle ID: CYC-012
+Mission: Execute the core implementation of the George Workspace
+
+Sub-Cycle: C12.1
+Expected Human Effort (minutes): 480
+Step: Schema Compilation
+Start Time: 2026-02-21T17:48:00Z
+Stop Time: 2026-02-21T17:51:00Z
+Duration (minutes): 3
+Actual AI-Assisted Human Work (minutes): 3
+Efficiency Multiplier: 160.0x
+
+Sub-Cycle: C12.2
+Expected Human Effort (minutes): 960
+Step: Go Backend Handlers
+Start Time: 2026-02-21T17:51:00Z
+Stop Time: 2026-02-21T17:56:00Z
+Duration (minutes): 5
+Actual AI-Assisted Human Work (minutes): 5
+Efficiency Multiplier: 192.0x
+
+Sub-Cycle: C12.3
+Expected Human Effort (minutes): 960
+Step: Flutter UI Integrations
+Start Time: 2026-02-21T17:56:00Z
+Stop Time: 2026-02-21T18:02:00Z
+Duration (minutes): 6
+Actual AI-Assisted Human Work (minutes): 6
+Efficiency Multiplier: 160.0x
+
+Sub-Cycle: C12.4
+Expected Human Effort (minutes): 480
+Step: Sovereign Tooling
+Start Time: 2026-02-21T18:02:00Z
+Stop Time: 2026-02-21T18:04:00Z
+Duration (minutes): 2
+Actual AI-Assisted Human Work (minutes): 2
+Efficiency Multiplier: 240.0x
+
+Total Expected Effort: 2880
+Total Actual Effort: 16
+Overall Efficiency: 180.0x

@@ -1,0 +1,71 @@
+<cycle_metrics> ::= <cycle_header> <sub_cycles> <cycle_summary>
+
+<cycle_header> ::=
+  "Cycle ID: " <id> "\n"
+  "Mission: " <string> "\n"
+
+<sub_cycles> ::= <sub_cycle>+
+
+<sub_cycle> ::=
+  "Sub-Cycle: " <id> "\n"
+  "Expected Human Effort (minutes): " <integer> "\n"
+  <steps>
+  "Actual AI-Assisted Human Work (minutes): " <integer> "\n"
+  "Efficiency Multiplier: " <float> "x\n"
+
+<steps> ::= <step>+
+
+<step> ::=
+  "Step: " <string> "\n"
+  "Start Time: " <datetime> "\n"
+  "Stop Time: " <datetime> "\n"
+  "Duration (minutes): " <integer> "\n"
+
+<cycle_summary> ::=
+  "Total Expected Effort: " <integer> "\n"
+  "Total Actual Effort: " <integer> "\n"
+  "Overall Efficiency: " <float> "x\n"
+
+// --- CYC-011 Tracking Data ---
+Cycle ID: CYC-011
+Mission: Reconstruct OpenClaw as the "George" Workspace (Customer Project)
+
+Sub-Cycle: C11.1
+Expected Human Effort (minutes): 600
+Step: Foundations and Architecture Planning
+Start Time: 2026-02-21T17:39:00Z
+Stop Time: 2026-02-21T17:40:00Z
+Duration (minutes): 1
+Actual AI-Assisted Human Work (minutes): 1
+Efficiency Multiplier: 600.0x
+
+Sub-Cycle: C11.2
+Expected Human Effort (minutes): 480
+Step: Frontend Foundations
+Start Time: 2026-02-21T17:40:00Z
+Stop Time: 2026-02-21T17:41:00Z
+Duration (minutes): 1
+Actual AI-Assisted Human Work (minutes): 1
+Efficiency Multiplier: 480.0x
+
+Sub-Cycle: C11.3
+Expected Human Effort (minutes): 720
+Step: Agentic Port & MCP Layer (Go)
+Start Time: 2026-02-21T17:41:00Z
+Stop Time: 2026-02-21T17:42:00Z
+Duration (minutes): 1
+Actual AI-Assisted Human Work (minutes): 1
+Efficiency Multiplier: 720.0x
+
+Sub-Cycle: C11.4
+Expected Human Effort (minutes): 1680
+Step: Integration, Verification & Security
+Start Time: 2026-02-21T17:42:00Z
+Stop Time: 2026-02-21T17:43:00Z
+Duration (minutes): 1
+Actual AI-Assisted Human Work (minutes): 1
+Efficiency Multiplier: 1680.0x
+
+Total Expected Effort: 3480
+Total Actual Effort: 4
+Overall Efficiency: 870.0x

@@ -13,17 +13,17 @@
 
 ## 2. Sub-Cycles (Phase 4: Platform Maturity)
 
-### C14.1: Sovereign CLI Experience [ ]
-- [ ] Add `sovereign build <module>` command calling the primary Forge binary.
-- [ ] Implement `sovereign docs` to aggregate markdown dependencies across a target module.
+### C14.1: Sovereign CLI Experience [x]
+- [x] Add `sovereign build <module>` command calling the primary Forge binary.
+- [x] Implement `sovereign docs` to aggregate markdown dependencies across a target module.
 
-### C14.2: Mesh Watcher Dashboard [ ]
-- [ ] Connect CLI loop to listen to Local Cloud Orchestration events.
-- [ ] Render visually appealing status list (Emulator Health) in terminal formatting.
+### C14.2: Mesh Watcher Dashboard [x]
+- [x] Connect CLI loop to listen to Local Cloud Orchestration events.
+- [x] Render visually appealing status list (Emulator Health) in terminal formatting.
 
-### C14.3: Conductor Session Synchronizer [ ]
-- [ ] Build LPSV Session log inside `conductor/` directory.
-- [ ] Implement sidecar ping writing context metadata to the log file.
+### C14.3: Conductor Session Synchronizer [x]
+- [x] Build LPSV Session log inside `conductor/` directory.
+- [x] Implement sidecar ping writing context metadata to the log file.
 
 ### C14.4: Cross-CLI Validation [ ]
 - [ ] Expose `/conductor:status` logic (or mock validator).
