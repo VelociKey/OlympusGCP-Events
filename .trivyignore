@@ -1,0 +1,7 @@
+# gRPC-Dart Test Keys (Known False Positives)
+# These keys are explicitly labeled as 'false_secrets' in the grpc-dart pubspec.yaml.
+# They are used for interop testing and cause recurring security noise.
+# Reporting: https://github.com/grpc/grpc-dart/issues
+
+90000-Enablement-Labs/000-Tools/000-dart/.pub-cache/000-_temp/000-dir70947e1c/000-interop/server1.key
+90000-Enablement-Labs/000-Tools/000-dart/.pub-cache/000-hosted/000-pub.dev/000-grpc-5.1.0/000-interop/server1.key

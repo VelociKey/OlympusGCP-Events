@@ -1,10 +1,19 @@
 # User Guide: GCP on a Workstation
 
-Welcome to the **Olympus Workstation Cloud**. This guide defines how developers and autonomous agents interact with Google Cloud Platform (GCP) services locally using our **MCP-Native** architecture.
+Welcome to the **Olympus Workstation Cloud**. This guide defines how developers and autonomous agents **provision** and interact with Google Cloud Platform (GCP) services locally using our **MCP-Native** architecture.
 
 ---
 
-## 1. The "Intent-First" Philosophy
+## 1. Nomenclature & Workflow
+To ensure clarity across the fleet, we use the following standard terms for actions:
+- **Commit**: Save changes to your local workstation Git.
+- **Publish**: Sync committed changes to GitHub.
+- **Provision**: Build and deploy cluster artifacts to a target (Workstation, Podman, or GCP).
+- **Ephemeral Scratch**: All temporary work or intermediate artifacts MUST reside in `Olympus2/C0990-Ephemeral-Scratch`, never in OS temporary folders.
+
+---
+
+## 2. The "Intent-First" Philosophy
 Unlike other emulators, Olympus does not require you to write complex GCP SDK code for local development. We provide **MCP Tools** that focus on your intent (e.g., "Read a secret") rather than the wire protocol.
 
 ### Universal Connection Pattern

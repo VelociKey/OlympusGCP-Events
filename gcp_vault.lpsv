@@ -1,2 +1,0 @@
-time:2026-02-19T19:37:58Z \| agent:gcp_vault \| type:EVENT \| action:INIT \| status:STARTED \| target:localhost:8092 \| dur:0.0000 \| out:VaultManager (GCP Substrate) starting on :8092
-time:2026-02-19T19:41:12Z \| agent:gcp_vault \| type:EVENT \| action:INIT \| status:STARTED \| target:localhost:8092 \| dur:0.0000 \| out:VaultManager (GCP Substrate) starting on :8092

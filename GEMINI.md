@@ -20,3 +20,19 @@
 ## Branching Strategy
 - Standard branches: production, staging, development.
 - development is the default active branch for all engineering work.
+
+## Action Nomenclature
+To ensure precision across the fleet, agents and developers MUST use these terms for actions:
+- **Commit**: Record changes to the **local workstation Git** repository.
+- **Publish**: Sync (push) committed changes from the local workstation to **GitHub**.
+- **Provision**: Build and deploy cluster artifacts to a **Target** (Workstation, Podman, or GCP).
+
+## Security Mandates: "Trivy-First"
+- **STRICT REQUIREMENT**: All local commits MUST pass a standard security scan.
+- **Blocking Condition**: Any `HIGH` or `CRITICAL` vulnerabilities, **Secrets** (API keys/tokens), or **License Violations** (restrictive licenses in proprietary code) MUST block the action.
+- Use `trivy fs . --scanners vuln,secret,license --severity HIGH,CRITICAL --exit-code 1` for enforcement.
+
+## Ephemeral Scratch Space
+- **STRICT REQUIREMENT**: Never use OS-level temporary directories (e.g., `/tmp`, `%TEMP%`) for intermediate artifacts or agent scratchpads.
+- All temporary space MUST be located within the `Olympus2/C0990-Ephemeral-Scratch` directory.
+- Agents should create subdirectories named after their task or session ID within this root.

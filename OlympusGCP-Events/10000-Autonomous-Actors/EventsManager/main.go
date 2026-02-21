@@ -4,9 +4,11 @@ import (
 	"context"
 	"log/slog"
 	"net/http"
+	"time"
 
 	eventsv1 "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1"
 	"OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1/eventsv1connect"
+
 	"connectrpc.com/connect"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
@@ -38,10 +40,12 @@ func main() {
 	port := "8094" // From genesis.json
 	slog.Info("EventsManager starting", "port", port)
 
-	err := http.ListenAndServe(
-		":"+port,
-		h2c.NewHandler(mux, &http2.Server{}),
-	)
+	srv := &http.Server{
+		Addr:              ":" + port,
+		Handler:           h2c.NewHandler(mux, &http2.Server{}),
+		ReadHeaderTimeout: 3 * time.Second,
+	}
+	err := srv.ListenAndServe()
 	if err != nil {
 		slog.Error("Server failed", "error", err)
 	}
