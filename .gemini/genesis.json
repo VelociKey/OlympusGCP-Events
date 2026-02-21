@@ -26,13 +26,15 @@
                             "OlympusGCP-Vault",
                             "OlympusGrammar",
                             "OlympusInfrastructure",
-                            "OlympusVision"
+                            "OlympusMuse",
+                            "OlympusVision",
+                            "R0000-Reference-Library"
                         ],
     "fleet_name":  "Olympus2",
     "version":  "1.0.0",
     "substrate_registry":  {
                                "ObservabilityManager":  8097,
-                               "MeshHub":  8090,
+                               "MessagingManager":  8090,
                                "StorageManager":  8091,
                                "VaultManager":  8092,
                                "ComputeManager":  8095,
