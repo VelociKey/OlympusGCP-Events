@@ -1,0 +1,71 @@
+<cycle_metrics> ::= <cycle_header> <sub_cycles> <cycle_summary>
+
+<cycle_header> ::=
+  "Cycle ID: " <id> "\n"
+  "Mission: " <string> "\n"
+
+<sub_cycles> ::= <sub_cycle>+
+
+<sub_cycle> ::=
+  "Sub-Cycle: " <id> "\n"
+  "Expected Human Effort (minutes): " <integer> "\n"
+  <steps>
+  "Actual AI-Assisted Human Work (minutes): " <integer> "\n"
+  "Efficiency Multiplier: " <float> "x\n"
+
+<steps> ::= <step>+
+
+<step> ::=
+  "Step: " <string> "\n"
+  "Start Time: " <datetime> "\n"
+  "Stop Time: " <datetime> "\n"
+  "Duration (minutes): " <integer> "\n"
+
+<cycle_summary> ::=
+  "Total Expected Effort: " <integer> "\n"
+  "Total Actual Effort: " <integer> "\n"
+  "Overall Efficiency: " <float> "x\n"
+
+// --- CYC-014 Tracking Data ---
+Cycle ID: CYC-014
+Mission: Sovereign CLI & Conductor Evolution
+
+Sub-Cycle: C14.1
+Expected Human Effort (minutes): 720
+Step: Sovereign CLI Experience
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Sub-Cycle: C14.2
+Expected Human Effort (minutes): 720
+Step: Mesh Watcher Dashboard
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Sub-Cycle: C14.3
+Expected Human Effort (minutes): 480
+Step: Conductor Session Synchronizer
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Sub-Cycle: C14.4
+Expected Human Effort (minutes): 480
+Step: Cross-CLI Validation
+Start Time: 
+Stop Time: 
+Duration (minutes): 0
+Actual AI-Assisted Human Work (minutes): 0
+Efficiency Multiplier: 0.0x
+
+Total Expected Effort: 2400
+Total Actual Effort: 0
+Overall Efficiency: 0.0x
