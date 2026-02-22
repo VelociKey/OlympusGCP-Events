@@ -28,4 +28,7 @@ This file tracks the status of all high-level work units (tracks) within the Oly
 | `CYC-029` | [Semantic Knowledge Base (RAG) Integration](./tracks/CYC-029/plan.md) | ✅ COMPLETE | Antigravity |
 | `CYC-030` | [Multi-Modal Processing & Code Vision](./tracks/CYC-030/plan.md) | ✅ COMPLETE | Antigravity |
 | `CYC-031` | [Native IDE & Sovereign CLI Integration](./tracks/CYC-031/plan.md) | ✅ COMPLETE | Antigravity |
-| ``CYC-032`` | [Automated Fleet-Wide Release Protocol](./tracks/CYC-032/plan.md) | ✅ COMPLETE | Antigravity |
+| `CYC-032` | [Automated Fleet-Wide Release Protocol](./tracks/CYC-032/plan.md) | ✅ COMPLETE | Antigravity |
+| `CYC-033` | [George Configuration & Reliability Hardening](./tracks/CYC-033/plan.md) | ✅ COMPLETE | Gemini |
+| `CYC-034` | [Sovereign Tooling Protocol Compliance](./tracks/CYC-034/plan.md) | ✅ COMPLETE | Gemini |
+| `CYC-035` | [George Comprehensive Verification & Testing](./tracks/CYC-035/plan.md) | ✅ COMPLETE | Gemini |
