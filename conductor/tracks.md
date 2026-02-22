@@ -32,3 +32,5 @@ This file tracks the status of all high-level work units (tracks) within the Oly
 | `CYC-033` | [George Configuration & Reliability Hardening](./tracks/CYC-033/plan.md) | ✅ COMPLETE | Gemini |
 | `CYC-034` | [Sovereign Tooling Protocol Compliance](./tracks/CYC-034/plan.md) | ✅ COMPLETE | Gemini |
 | `CYC-035` | [George Comprehensive Verification & Testing](./tracks/CYC-035/plan.md) | ✅ COMPLETE | Gemini |
+| `CYC-036` | [George Structural Reconstitution & Architectural Alignment](./tracks/CYC-036/plan.md) | ✅ COMPLETE | Gemini |
+| `CYC-037` | [George Sovereign Intelligence Bootstrap (Ollama & Gemma)](./tracks/CYC-037/plan.md) | ✅ COMPLETE | Gemini |
