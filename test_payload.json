@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "finops_estimate_cost", "arguments": {"service": "Cloud SQL", "action": "Provision HA node"}}}

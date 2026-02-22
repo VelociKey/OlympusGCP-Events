@@ -1,19 +1,19 @@
 ---
 description: Publish (push) committed changes to GitHub (all by default or a list of one or more comma-separated)
 ---
-# Fleet Publish Workflow
+# Fleet Publish Workflow (/publish)
 
-This workflow automates pushing your committed changes from the local workstation to the remote GitHub repositories.
+This workflow automates the publication of your local workstation commits to the remote GitHub repositories. It serves as the final step in the fleet distribution pipeline.
 
 ### Instructions
 
-1. **Verify Commits**: Ensure all targeted changes are already committed locally via the `/fleet-commit` workflow.
-2. **Push Changes**: For each workspace, run:
-   ```bash
-   git push origin development
-   ```
-   Note: The fleet standard is to push to the `development` branch.
-3. **Handle Errors**: If you encounter authentication issues, remind the user to check their GitHub credentials.
+1.  **Prerequisites**: Ensure all changes have been staged and committed via the `/commit` workflow.
+2.  **Push Changes**: For each targeted workspace, execute:
+    ```bash
+    git push origin development
+    ```
+    *Note: The fleet standard branch for all engineering work is `development`.*
+3.  **Governance**: If the release involves a Track completion, ensure the `plan.md` reflects the final state before pushing.
 
 ### Workspace Registry (Default: All)
 - Olympus2

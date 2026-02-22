@@ -1,0 +1,62 @@
+<cycle_metrics> ::= <cycle_header> <sub_cycles> <cycle_summary>
+
+<cycle_header> ::=
+  "Cycle ID: " <id> "\n"
+  "Mission: " <string> "\n"
+
+<sub_cycles> ::= <sub_cycle>+
+
+<sub_cycle> ::=
+  "Sub-Cycle: " <id> "\n"
+  "Expected Human Effort (minutes): " <integer> "\n"
+  <steps>
+  "Actual AI-Assisted Human Work (minutes): " <integer> "\n"
+  "Efficiency Multiplier: " <float> "x\n"
+
+<steps> ::= <step>+
+
+<step> ::=
+  "Step: " <string> "\n"
+  "Start Time: " <datetime> "\n"
+  "Stop Time: " <datetime> "\n"
+  "Duration (minutes): " <integer> "\n"
+
+<cycle_summary> ::=
+  "Total Expected Effort: " <integer> "\n"
+  "Total Actual Effort: " <integer> "\n"
+  "Overall Efficiency: " <float> "x\n"
+
+// --- CYC-016 Tracking Data ---
+Cycle ID: CYC-016
+Mission: Sovereign Web Dashboard (Flutter WASM)
+
+Sub-Cycle: C16.1
+Expected Human Effort (minutes): 360
+Step: WASM Workspace Initialization
+Start Time: 2026-02-21T18:30:00Z
+Stop Time: 2026-02-21T18:32:00Z
+Duration (minutes): 2
+Actual AI-Assisted Human Work (minutes): 2
+Efficiency Multiplier: 180.0x
+
+Sub-Cycle: C16.2
+Expected Human Effort (minutes): 480
+Step: Sovereign Mesh Integration
+Start Time: 2026-02-21T18:32:00Z
+Stop Time: 2026-02-21T18:36:00Z
+Duration (minutes): 4
+Actual AI-Assisted Human Work (minutes): 4
+Efficiency Multiplier: 120.0x
+
+Sub-Cycle: C16.3
+Expected Human Effort (minutes): 240
+Step: Web Compilation and Delivery
+Start Time: 2026-02-21T18:40:00Z
+Stop Time: 2026-02-21T18:55:00Z
+Duration (minutes): 15
+Actual AI-Assisted Human Work (minutes): 15
+Efficiency Multiplier: 16.0x
+
+Total Expected Effort: 1080
+Total Actual Effort: 0
+Overall Efficiency: 0.0x

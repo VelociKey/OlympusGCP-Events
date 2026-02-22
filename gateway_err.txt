@@ -1,0 +1,2 @@
+{"time":"2026-02-21T01:33:05.3519304-05:00","level":"INFO","msg":"Starting Olympus MCP Gateway","backend":"http://127.0.0.1:8094"}
+{"time":"2026-02-21T01:33:05.3524722-05:00","level":"INFO","msg":"SovereignGateway listening on stdio..."}

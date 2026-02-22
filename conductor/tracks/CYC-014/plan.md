@@ -25,9 +25,9 @@
 - [x] Build LPSV Session log inside `conductor/` directory.
 - [x] Implement sidecar ping writing context metadata to the log file.
 
-### C14.4: Cross-CLI Validation [ ]
-- [ ] Expose `/conductor:status` logic (or mock validator).
-- [ ] Run End-to-End simulation where Gemini-CLI reads Antigravity's tracks.
+### C14.4: Cross-CLI Validation [x]
+- [x] Expose `/conductor:status` logic (or mock validator).
+- [x] Run End-to-End simulation where Gemini-CLI reads Antigravity's tracks.
 
 ## 3. Cycle Time Tracking (jeBNF)
 - **Time Tracker**: [Cycle-Metrics-CYC-014.jebnf](./Cycle-Metrics-CYC-014.jebnf)
