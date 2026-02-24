@@ -625,7 +625,7 @@ const file_events_v1_events_proto_rawDesc = "" +
 	"\vResumeQueue\x12\x1d.events.v1.ResumeQueueRequest\x1a\x1e.events.v1.ResumeQueueResponse\x12I\n" +
 	"\n" +
 	"PurgeQueue\x12\x1c.events.v1.PurgeQueueRequest\x1a\x1d.events.v1.PurgeQueueResponse\x12F\n" +
-	"\tCreateJob\x12\x1b.events.v1.CreateJobRequest\x1a\x1c.events.v1.CreateJobResponseBeZcOlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1;eventsv1b\x06proto3"
+	"\tCreateJob\x12\x1b.events.v1.CreateJobRequest\x1a\x1c.events.v1.CreateJobResponseBeZcOlympusGCP-Events/gen/v1/events;eventsv1b\x06proto3"
 
 var (
 	file_events_v1_events_proto_rawDescOnce sync.Once

@@ -4,12 +4,13 @@ import (
 	"context"
 	"testing"
 
-	eventsv1 "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1"
+	eventsv1 "OlympusGCP-Events/gen/v1/events"
+	"OlympusGCP-Events/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
 	"connectrpc.com/connect"
 )
 
 func TestEventsServerAdvanced(t *testing.T) {
-	server := NewEventsServer()
+	server := inference.NewEventsServer()
 	ctx := context.Background()
 
 	// Test Pause/Resume
@@ -64,7 +65,7 @@ func TestEventsServerAdvanced(t *testing.T) {
 }
 
 func TestEventsServerBasic(t *testing.T) {
-	server := NewEventsServer()
+	server := inference.NewEventsServer()
 	ctx := context.Background()
 
 	// Test Publish

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package events.v1;
 
-option go_package = "OlympusGCP-Events/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/events/v1;eventsv1";
+option go_package = "OlympusGCP-Events/gen/v1/events;eventsv1";
 
 service EventsService {
   rpc Publish (PublishRequest) returns (PublishResponse);
