@@ -38,6 +38,15 @@ const (
 	// EventsServiceCreateTaskProcedure is the fully-qualified name of the EventsService's CreateTask
 	// RPC.
 	EventsServiceCreateTaskProcedure = "/events.v1.EventsService/CreateTask"
+	// EventsServicePauseQueueProcedure is the fully-qualified name of the EventsService's PauseQueue
+	// RPC.
+	EventsServicePauseQueueProcedure = "/events.v1.EventsService/PauseQueue"
+	// EventsServiceResumeQueueProcedure is the fully-qualified name of the EventsService's ResumeQueue
+	// RPC.
+	EventsServiceResumeQueueProcedure = "/events.v1.EventsService/ResumeQueue"
+	// EventsServicePurgeQueueProcedure is the fully-qualified name of the EventsService's PurgeQueue
+	// RPC.
+	EventsServicePurgeQueueProcedure = "/events.v1.EventsService/PurgeQueue"
 	// EventsServiceCreateJobProcedure is the fully-qualified name of the EventsService's CreateJob RPC.
 	EventsServiceCreateJobProcedure = "/events.v1.EventsService/CreateJob"
 )
@@ -45,7 +54,11 @@ const (
 // EventsServiceClient is a client for the events.v1.EventsService service.
 type EventsServiceClient interface {
 	Publish(context.Context, *connect.Request[v1.PublishRequest]) (*connect.Response[v1.PublishResponse], error)
+	// Tasks Advanced
 	CreateTask(context.Context, *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error)
+	PauseQueue(context.Context, *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error)
+	ResumeQueue(context.Context, *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error)
+	PurgeQueue(context.Context, *connect.Request[v1.PurgeQueueRequest]) (*connect.Response[v1.PurgeQueueResponse], error)
 	CreateJob(context.Context, *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error)
 }
 
@@ -72,6 +85,24 @@ func NewEventsServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(eventsServiceMethods.ByName("CreateTask")),
 			connect.WithClientOptions(opts...),
 		),
+		pauseQueue: connect.NewClient[v1.PauseQueueRequest, v1.PauseQueueResponse](
+			httpClient,
+			baseURL+EventsServicePauseQueueProcedure,
+			connect.WithSchema(eventsServiceMethods.ByName("PauseQueue")),
+			connect.WithClientOptions(opts...),
+		),
+		resumeQueue: connect.NewClient[v1.ResumeQueueRequest, v1.ResumeQueueResponse](
+			httpClient,
+			baseURL+EventsServiceResumeQueueProcedure,
+			connect.WithSchema(eventsServiceMethods.ByName("ResumeQueue")),
+			connect.WithClientOptions(opts...),
+		),
+		purgeQueue: connect.NewClient[v1.PurgeQueueRequest, v1.PurgeQueueResponse](
+			httpClient,
+			baseURL+EventsServicePurgeQueueProcedure,
+			connect.WithSchema(eventsServiceMethods.ByName("PurgeQueue")),
+			connect.WithClientOptions(opts...),
+		),
 		createJob: connect.NewClient[v1.CreateJobRequest, v1.CreateJobResponse](
 			httpClient,
 			baseURL+EventsServiceCreateJobProcedure,
@@ -83,9 +114,12 @@ func NewEventsServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 
 // eventsServiceClient implements EventsServiceClient.
 type eventsServiceClient struct {
-	publish    *connect.Client[v1.PublishRequest, v1.PublishResponse]
-	createTask *connect.Client[v1.CreateTaskRequest, v1.CreateTaskResponse]
-	createJob  *connect.Client[v1.CreateJobRequest, v1.CreateJobResponse]
+	publish     *connect.Client[v1.PublishRequest, v1.PublishResponse]
+	createTask  *connect.Client[v1.CreateTaskRequest, v1.CreateTaskResponse]
+	pauseQueue  *connect.Client[v1.PauseQueueRequest, v1.PauseQueueResponse]
+	resumeQueue *connect.Client[v1.ResumeQueueRequest, v1.ResumeQueueResponse]
+	purgeQueue  *connect.Client[v1.PurgeQueueRequest, v1.PurgeQueueResponse]
+	createJob   *connect.Client[v1.CreateJobRequest, v1.CreateJobResponse]
 }
 
 // Publish calls events.v1.EventsService.Publish.
@@ -98,6 +132,21 @@ func (c *eventsServiceClient) CreateTask(ctx context.Context, req *connect.Reque
 	return c.createTask.CallUnary(ctx, req)
 }
 
+// PauseQueue calls events.v1.EventsService.PauseQueue.
+func (c *eventsServiceClient) PauseQueue(ctx context.Context, req *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error) {
+	return c.pauseQueue.CallUnary(ctx, req)
+}
+
+// ResumeQueue calls events.v1.EventsService.ResumeQueue.
+func (c *eventsServiceClient) ResumeQueue(ctx context.Context, req *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error) {
+	return c.resumeQueue.CallUnary(ctx, req)
+}
+
+// PurgeQueue calls events.v1.EventsService.PurgeQueue.
+func (c *eventsServiceClient) PurgeQueue(ctx context.Context, req *connect.Request[v1.PurgeQueueRequest]) (*connect.Response[v1.PurgeQueueResponse], error) {
+	return c.purgeQueue.CallUnary(ctx, req)
+}
+
 // CreateJob calls events.v1.EventsService.CreateJob.
 func (c *eventsServiceClient) CreateJob(ctx context.Context, req *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error) {
 	return c.createJob.CallUnary(ctx, req)
@@ -106,7 +155,11 @@ func (c *eventsServiceClient) CreateJob(ctx context.Context, req *connect.Reques
 // EventsServiceHandler is an implementation of the events.v1.EventsService service.
 type EventsServiceHandler interface {
 	Publish(context.Context, *connect.Request[v1.PublishRequest]) (*connect.Response[v1.PublishResponse], error)
+	// Tasks Advanced
 	CreateTask(context.Context, *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error)
+	PauseQueue(context.Context, *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error)
+	ResumeQueue(context.Context, *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error)
+	PurgeQueue(context.Context, *connect.Request[v1.PurgeQueueRequest]) (*connect.Response[v1.PurgeQueueResponse], error)
 	CreateJob(context.Context, *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error)
 }
 
@@ -129,6 +182,24 @@ func NewEventsServiceHandler(svc EventsServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(eventsServiceMethods.ByName("CreateTask")),
 		connect.WithHandlerOptions(opts...),
 	)
+	eventsServicePauseQueueHandler := connect.NewUnaryHandler(
+		EventsServicePauseQueueProcedure,
+		svc.PauseQueue,
+		connect.WithSchema(eventsServiceMethods.ByName("PauseQueue")),
+		connect.WithHandlerOptions(opts...),
+	)
+	eventsServiceResumeQueueHandler := connect.NewUnaryHandler(
+		EventsServiceResumeQueueProcedure,
+		svc.ResumeQueue,
+		connect.WithSchema(eventsServiceMethods.ByName("ResumeQueue")),
+		connect.WithHandlerOptions(opts...),
+	)
+	eventsServicePurgeQueueHandler := connect.NewUnaryHandler(
+		EventsServicePurgeQueueProcedure,
+		svc.PurgeQueue,
+		connect.WithSchema(eventsServiceMethods.ByName("PurgeQueue")),
+		connect.WithHandlerOptions(opts...),
+	)
 	eventsServiceCreateJobHandler := connect.NewUnaryHandler(
 		EventsServiceCreateJobProcedure,
 		svc.CreateJob,
@@ -141,6 +212,12 @@ func NewEventsServiceHandler(svc EventsServiceHandler, opts ...connect.HandlerOp
 			eventsServicePublishHandler.ServeHTTP(w, r)
 		case EventsServiceCreateTaskProcedure:
 			eventsServiceCreateTaskHandler.ServeHTTP(w, r)
+		case EventsServicePauseQueueProcedure:
+			eventsServicePauseQueueHandler.ServeHTTP(w, r)
+		case EventsServiceResumeQueueProcedure:
+			eventsServiceResumeQueueHandler.ServeHTTP(w, r)
+		case EventsServicePurgeQueueProcedure:
+			eventsServicePurgeQueueHandler.ServeHTTP(w, r)
 		case EventsServiceCreateJobProcedure:
 			eventsServiceCreateJobHandler.ServeHTTP(w, r)
 		default:
@@ -158,6 +235,18 @@ func (UnimplementedEventsServiceHandler) Publish(context.Context, *connect.Reque
 
 func (UnimplementedEventsServiceHandler) CreateTask(context.Context, *connect.Request[v1.CreateTaskRequest]) (*connect.Response[v1.CreateTaskResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("events.v1.EventsService.CreateTask is not implemented"))
+}
+
+func (UnimplementedEventsServiceHandler) PauseQueue(context.Context, *connect.Request[v1.PauseQueueRequest]) (*connect.Response[v1.PauseQueueResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("events.v1.EventsService.PauseQueue is not implemented"))
+}
+
+func (UnimplementedEventsServiceHandler) ResumeQueue(context.Context, *connect.Request[v1.ResumeQueueRequest]) (*connect.Response[v1.ResumeQueueResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("events.v1.EventsService.ResumeQueue is not implemented"))
+}
+
+func (UnimplementedEventsServiceHandler) PurgeQueue(context.Context, *connect.Request[v1.PurgeQueueRequest]) (*connect.Response[v1.PurgeQueueResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("events.v1.EventsService.PurgeQueue is not implemented"))
 }
 
 func (UnimplementedEventsServiceHandler) CreateJob(context.Context, *connect.Request[v1.CreateJobRequest]) (*connect.Response[v1.CreateJobResponse], error) {

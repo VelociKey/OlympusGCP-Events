@@ -6,7 +6,13 @@ option go_package = "OlympusGCP-Events/40000-Communication-Contracts/430-Protoco
 
 service EventsService {
   rpc Publish (PublishRequest) returns (PublishResponse);
+  
+  // Tasks Advanced
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
+  rpc PauseQueue (PauseQueueRequest) returns (PauseQueueResponse);
+  rpc ResumeQueue (ResumeQueueRequest) returns (ResumeQueueResponse);
+  rpc PurgeQueue (PurgeQueueRequest) returns (PurgeQueueResponse);
+
   rpc CreateJob (CreateJobRequest) returns (CreateJobResponse);
 }
 
@@ -21,13 +27,33 @@ message PublishResponse {
 
 message CreateTaskRequest {
   string queue = 1;
-  string payload = 2;
-  int32 delay_seconds = 3;
+  string task_id = 2; // For deduplication
+  string payload = 3;
+  int32 delay_seconds = 4;
+  int32 max_attempts = 5;
 }
 
 message CreateTaskResponse {
   string task_name = 1;
 }
+
+message PauseQueueRequest {
+  string name = 1;
+}
+
+message PauseQueueResponse {}
+
+message ResumeQueueRequest {
+  string name = 1;
+}
+
+message ResumeQueueResponse {}
+
+message PurgeQueueRequest {
+  string name = 1;
+}
+
+message PurgeQueueResponse {}
 
 message CreateJobRequest {
   string name = 1;
