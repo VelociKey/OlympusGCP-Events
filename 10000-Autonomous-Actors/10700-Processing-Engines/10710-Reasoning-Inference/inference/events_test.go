@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	eventsv1 "OlympusGCP-Events/gen/v1/events"
-	"connectrpc.com/connect"
+	"olympus.fleet/ext/connectrpc/connect"
 )
 
 func TestEventsServer_CoverageExpansion(t *testing.T) {

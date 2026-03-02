@@ -7,9 +7,9 @@ import (
 
 	"mcp-go/mcp"
 
-	"connectrpc.com/connect"
+	"olympus.fleet/ext/connectrpc/connect"
 
-	mcpbridge "Olympus2/90000-Enablement-Labs/P0000-pkg/000-mcp-bridge"
+	mcpbridge "olympus.fleet/00SDLC/Olympus2/90000-Enablement-Labs/P0000-pkg/000-mcp-bridge"
 	eventsv1 "OlympusGCP-Events/gen/v1/events"
 	"OlympusGCP-Events/gen/v1/events/eventsv1connect"
 )
