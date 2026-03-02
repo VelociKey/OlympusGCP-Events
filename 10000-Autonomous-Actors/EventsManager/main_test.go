@@ -6,7 +6,7 @@ import (
 
 	eventsv1 "OlympusGCP-Events/gen/v1/events"
 	"OlympusGCP-Events/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
-	"olympus.fleet/ext/connectrpc/connect"
+	"connectrpc.com/connect"
 )
 
 func TestEventsServerAdvanced(t *testing.T) {

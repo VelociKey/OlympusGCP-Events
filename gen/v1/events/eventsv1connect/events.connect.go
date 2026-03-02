@@ -6,7 +6,7 @@ package eventsv1connect
 
 import (
 	events "OlympusGCP-Events/gen/v1/events"
-	connect "olympus.fleet/ext/connectrpc/connect"
+	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
 	http "net/http"

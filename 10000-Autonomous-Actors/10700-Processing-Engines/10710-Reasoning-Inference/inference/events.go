@@ -8,7 +8,7 @@ import (
 	"time"
 
 	eventsv1 "OlympusGCP-Events/gen/v1/events"
-	"olympus.fleet/ext/connectrpc/connect"
+	"connectrpc.com/connect"
 )
 
 type EventsServer struct {
