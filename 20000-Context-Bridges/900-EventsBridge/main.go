@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"mcp-go/mcp"
+	"github.com/mark3labs/mcp-go/mcp"
 
 	"connectrpc.com/connect"
 
-	mcpbridge "Olympus2/90000-Enablement-Labs/P0000-pkg/000-mcp-bridge"
-	eventsv1 "OlympusGCP-Events/gen/v1/events"
-	"OlympusGCP-Events/gen/v1/events/eventsv1connect"
+	mcpbridge "olympus.fleet/00SDLC/Olympus2/90000-Enablement-Labs/P0900-Labs/140-MCPBridge"
+	eventsv1 "olympus.fleet/00SDLC/OlympusGCP-Events/gen/v1/events"
+	"olympus.fleet/00SDLC/OlympusGCP-Events/gen/v1/events/eventsv1connect"
 )
 
 func main() {

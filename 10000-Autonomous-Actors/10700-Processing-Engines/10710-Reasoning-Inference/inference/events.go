@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	eventsv1 "OlympusGCP-Events/gen/v1/events"
+	eventsv1 "olympus.fleet/00SDLC/OlympusGCP-Events/gen/v1/events"
 	"connectrpc.com/connect"
 )
 

@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	eventsv1 "OlympusGCP-Events/gen/v1/events"
-	"OlympusGCP-Events/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
+	eventsv1 "olympus.fleet/00SDLC/OlympusGCP-Events/gen/v1/events"
+	"olympus.fleet/00SDLC/OlympusGCP-Events/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
 	"connectrpc.com/connect"
 )
 
