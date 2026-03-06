@@ -5,7 +5,11 @@
 package eventsv1connect
 
 import (
+<<<<<<< HEAD:40000-Communication-Contracts/40400-Protocol-Synthetics/connect-rpc/gen/v1/events/eventsv1connect/events.connect.go
 	events "olympus.fleet/00SDLC/OlympusGCP-Events/gen/v1/events"
+=======
+	events "OlympusGCP-Events/gen/v1/events"
+>>>>>>> origin/development:gen/v1/events/eventsv1connect/events.connect.go
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
