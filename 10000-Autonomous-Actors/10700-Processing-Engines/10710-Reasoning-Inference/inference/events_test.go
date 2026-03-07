@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	eventsv1 "olympus.fleet/00SDLC/OlympusGCP-Events/gen/v1/events"
+	eventsv1 "olympus.fleet/00SDLC/OlympusGCP-Events/40000-Communication-Contracts/40400-Protocol-Synthetics/connect-rpc/gen/v1/events"
 	"connectrpc.com/connect"
 )
 
