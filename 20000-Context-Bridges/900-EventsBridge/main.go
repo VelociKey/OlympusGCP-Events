@@ -9,15 +9,9 @@ import (
 
 	"connectrpc.com/connect"
 
-<<<<<<< HEAD
 	mcpbridge "olympus.fleet/00SDLC/Olympus2/90000-Enablement-Labs/90200-Logic-Libraries/140-MCPBridge"
 	eventsv1 "olympus.fleet/00SDLC/OlympusGCP-Events/40000-Communication-Contracts/40400-Protocol-Synthetics/connect-rpc/gen/v1/events"
 	"olympus.fleet/00SDLC/OlympusGCP-Events/40000-Communication-Contracts/40400-Protocol-Synthetics/connect-rpc/gen/v1/events/eventsv1connect"
-=======
-	mcpbridge "olympus.fleet/00SDLC/Olympus2/90000-Enablement-Labs/P0000-pkg/000-mcp-bridge"
-	eventsv1 "OlympusGCP-Events/gen/v1/events"
-	"OlympusGCP-Events/gen/v1/events/eventsv1connect"
->>>>>>> origin/development
 )
 
 func main() {
